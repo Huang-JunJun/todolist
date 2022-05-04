@@ -62,7 +62,7 @@ export default {
     },
     methods: {
         login() {
-            // this.$router.push('/')
+            this.$router.push('/')
         }
     }
 }

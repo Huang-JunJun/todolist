@@ -10,7 +10,18 @@ const routes = [
         meta: {
             title: '主页'
         },
-        component: () => import('../pages/home')
+        component: () => import('../pages/home'),
+        children: [
+            {
+                icon: 'mdi-playlist-check',
+                path: '/todolist',
+                name: 'todolist',
+                meta: {
+                    title: '待做清单'
+                },
+                component: () => import('../pages/todolist')
+            }
+        ],
     },
     {
         path: '/login',

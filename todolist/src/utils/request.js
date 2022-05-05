@@ -5,7 +5,7 @@
 import axios from 'axios'
 
 const request = axios.create({
-  baseURL: '/',
+  baseURL: '/todolist',
   timeOut: 10 * 1000
 })
 

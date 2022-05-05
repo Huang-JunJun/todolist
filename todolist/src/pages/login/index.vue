@@ -53,6 +53,8 @@
 </template>
 
 <script>
+import request from '../../utils/request'
+
 export default {
     data () {
         return {
@@ -61,8 +63,18 @@ export default {
         }
     },
     methods: {
-        login() {
-            this.$router.push('/')
+        async login() {
+            const params = {
+                username: this.username,
+                password: this.password
+            }
+            const res = await request({
+                url: '/users/login',
+                method: 'POST',
+                data: params
+            })
+
+            console.log(res);
         }
     }
 }

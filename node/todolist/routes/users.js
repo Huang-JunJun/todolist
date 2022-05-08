@@ -1,4 +1,5 @@
 var express = require('express');
+const verToken = require('../public/javascripts/token');
 var router = express.Router();
 
 const { login } = require('../service/usersService')
@@ -14,13 +15,16 @@ router.post('/login', async function(req, res, next) {
   // - get: req.query
   // send方法处理响应结果给到前端
   // 接收到前端发送的用户数据
+  const username = req.body.username;
   const user = req.body
-  console.log(req.body);
   const result = await login(user)
   if (result.length !== 0) {
-    res.send({
-      msg: '登录成功',
-      status: 200
+    verToken.setToken(username, result._id).then((data) => {
+      res.send({
+        msg: '登录成功',
+        status: 200,
+        token: data
+      })
     })
   } else {
     res.send({

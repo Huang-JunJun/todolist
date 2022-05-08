@@ -5,4 +5,3 @@ module.exports.login = function (user) {
 //  调用第三层usersDao的方法 操作数据库
   return login(user)
 }
-

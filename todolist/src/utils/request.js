@@ -11,6 +11,7 @@ const request = axios.create({
 
 request.interceptors.request.use(
   (config) => {
+    config.headers.Authorization = window.sessionStorage.getItem('token')
     return config
   },
   (error) => {

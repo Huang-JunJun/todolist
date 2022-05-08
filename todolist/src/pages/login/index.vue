@@ -6,7 +6,7 @@
         >
         <v-card class="loginBox">
             <v-card-title>
-            账号登录
+            Login
             </v-card-title>
             <v-card-text>
                 <v-form>
@@ -19,7 +19,8 @@
                             <v-text-field
                                 style=""
                                 v-model="username"
-                                label="用户名"
+                                label="Username"
+                                :rules="rules.nameRules"
                             ></v-text-field>
                             </v-col>
                             <v-col
@@ -28,7 +29,9 @@
                             >
                             <v-text-field
                                 v-model="password"
-                                label="password"
+                                label="Password"
+                                type="password"
+                                :rules="rules.passwordRules"
                             ></v-text-field>
                             </v-col>
                             <v-col
@@ -41,7 +44,7 @@
                             type="submit"
                             @click="login()"
                             >
-                                登录
+                                sign in
                             </v-btn>
                             </v-col>
                         </v-row>
@@ -59,7 +62,17 @@ export default {
     data () {
         return {
             username: '',
-            password: ''
+            password: '',
+            snackbar: false,
+            alert: false,
+            rules: {
+                nameRules: [
+                    v => !!v || 'Username is required',
+                ],
+                passwordRules: [
+                    v => !!v || 'Password is required',
+                ]
+            }
         }
     },
     methods: {
@@ -73,8 +86,12 @@ export default {
                 method: 'POST',
                 data: params
             })
-
-            console.log(res);
+            if (res.status === 200) {
+                console.log(res);
+                console.log(res.token);
+                window.sessionStorage.setItem('token', res.token)
+                this.$router.push({path: '/'})
+            }
         }
     }
 }
@@ -106,5 +123,13 @@ export default {
     float: right;
     bottom: 15px;
     right: 30px;
+}
+
+.alertBox {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
 }
 </style>

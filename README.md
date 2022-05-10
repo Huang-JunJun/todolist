@@ -5,20 +5,20 @@
 
 #### 界面
 
-1. 登录界面![1652012387917](C:\Users\77089\AppData\Roaming\Typora\typora-user-images\1652012387917.png)
+1. 登录界面
 
-2. 主页界面![1652012425179](C:\Users\77089\AppData\Roaming\Typora\typora-user-images\1652012425179.png)
+2. 主页界面
 
-3. 待做清单页面![1652012445303](C:\Users\77089\AppData\Roaming\Typora\typora-user-images\1652012445303.png)
+3. 待做清单页面
 
-4. 选择时间页面![1652012465198](C:\Users\77089\AppData\Roaming\Typora\typora-user-images\1652012474828.png)
+4. 选择时间页面
 
-   ![1652012496218](C:\Users\77089\AppData\Roaming\Typora\typora-user-images\1652012496218.png)
-
-5. 清单页面![1652012533706](C:\Users\77089\AppData\Roaming\Typora\typora-user-images\1652012533706.png)
+5. 清单页面
 
 #### 做这个项目的原因
 
-因为在公司写的都是的elementUI和antd 所以想换个框架试试，所以选择了vertify。作为一名前端也想多尝试express写写后端以便更了解开发流程。
+因为在公司写的都是的elementUI和antd 所以想换个框架试试，所以选择了vuetify。作为一名前端也想多尝试express写写后端以便更了解开发流程。
+
+码云项目地址：https://gitee.com/huang-xianjun/todolist
 
 该项目还待完善。

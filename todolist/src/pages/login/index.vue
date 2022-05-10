@@ -93,6 +93,9 @@ export default {
                 this.$router.push({path: '/'})
             }
         }
+    },
+    computed: {
+        
     }
 }
 </script>
